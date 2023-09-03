@@ -1,4 +1,4 @@
-package com.example.web.domain;
+package com.web.court.domain;
 
 public class Player {
 
@@ -9,9 +9,8 @@ public class Player {
     public Player() {
     }
 
-    public Player(String name, String phone) {
+    public Player(String name) {
         this.name = name;
-        this.phone = phone;
     }
 
     public String getName() {
