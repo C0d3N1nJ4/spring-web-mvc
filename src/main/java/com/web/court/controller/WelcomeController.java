@@ -14,6 +14,6 @@ public class WelcomeController {
     @RequestMapping(method = RequestMethod.GET)
     public String welcome(Model model) {
         model.addAttribute("today", LocalDate.now());
-        return "/WEB-INF/views/welcome.jsp";
+        return "WEB-INF/jsp/welcome.jsp";
     }
 }

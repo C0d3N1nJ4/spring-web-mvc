@@ -21,7 +21,7 @@ import java.util.Set;
 
 public class CourtServletContainerInitializer implements ServletContainerInitializer {
 
-    public static final String MSG = "Starting Court Web Application...";
+    public static final String MSG = "Starting Court Web Application";
 
     @Override
     public void onStartup(Set<Class<?>> c, ServletContext ctx) throws ServletException {
@@ -30,7 +30,9 @@ public class CourtServletContainerInitializer implements ServletContainerInitial
 
         var applicationContext = new AnnotationConfigWebApplicationContext();
         applicationContext.register(CourtConfiguration.class);
+
         var dispatcherServlet = new DispatcherServlet(applicationContext);
+
         var courtRegistration = ctx.addServlet("court", dispatcherServlet);
         courtRegistration.addMapping("/");
         courtRegistration.setLoadOnStartup(1);

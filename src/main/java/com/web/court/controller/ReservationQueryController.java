@@ -20,18 +20,15 @@ public class ReservationQueryController {
     }
 
     @GetMapping
-    public void setupForm() {
-    }
+    public void setupForm() {}
 
     @PostMapping
-    public String submitForm(@RequestParam("courtName") String courtName, Model model) {
+    public String sumbitForm(@RequestParam("courtName") String courtName, Model model) {
         var reservations = java.util.Collections.<Reservation>emptyList();
         if (courtName != null) {
-            reservations = this.reservationService.query(courtName);
+            reservations = reservationService.query(courtName);
         }
         model.addAttribute("reservations", reservations);
         return "/WEB-INF/jsp/reservationQuery.jsp";
     }
-
-
 }
